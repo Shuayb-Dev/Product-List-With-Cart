@@ -2,7 +2,8 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
-  gap: 8px;
+  gap: 10px;
+  row-gap: 80px;
 }
 
 .div4 {
@@ -43,8 +44,8 @@
 .div9 {
   border-style: none;
   border-radius: 5px;
-  height: 100px;
-  width: 100px;
+  height: 200px;
+  width: 200px;
   background-color: red;
 }
 
@@ -61,4 +62,37 @@ body {
   height: 300px;
   width: 300px;
   background-color: white;
+}
+
+.div1 {
+  background-image: url(images/image-waffle-desktop.jpg);
+  background-size: cover;
+}
+
+button {
+  height: 40px;
+  width: 120px;
+  position: relative;
+  left: 25%;
+  top: 90%;
+  border-radius: 10px;
+}
+
+button img {
+  position: relative;
+  top: 5px;
+}
+
+#waffle-count {
+  background-color: hsl(15, 85%, 42%);
+  display: flex;
+  gap: 38px;
+  display: none;
+}
+
+#waffle-count img {
+  border: solid 1px white;
+  border-radius: 50%;
+  height: 10px;
+  width: 10px;
 }
