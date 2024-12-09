@@ -3,6 +3,8 @@ function addItems() {
   const addToCart = document.getElementById("add-to-cart");
   const waffleCount = document.getElementById("waffle-count");
   let totalItems = document.getElementById("total-items");
+  let waffleLabel = document.getElementById("waffle-label");
+  let addedItems = document.getElementById("added-items");
 
   // Hide "Add to Cart" button and show quantity controls
   addToCart.style.display = "none";
@@ -17,6 +19,12 @@ function addItems() {
       `;
     totalItems.innerHTML = `<h2 id="total-items">Your Cart (${currentCount})</h2>`;
 
+    if (currentCount > 0) {
+      addedItems.innerHTML = `<p>${waffleLabel.innerHTML} x ${currentCount}</p>`;
+    } else {
+      addedItems.innerHTML = "";
+    }
+
     // Reattach event listeners to the new buttons
     document.getElementById("minus").addEventListener("click", updateCountDown);
     document.getElementById("plus").addEventListener("click", updateCountUp);
@@ -24,15 +32,15 @@ function addItems() {
 
   // Decrease count
   function updateCountDown() {
-    let totalItems = document.getElementById("total-items");
-
-    if (currentCount > 1) {
+    if (currentCount > 0) {
+      // Allow the count to reach 0
       currentCount--;
+      if (currentCount === 0) {
+        // Revert back to "Add to Cart" when count reaches 0
+        addToCart.style.display = "block";
+        waffleCount.style.display = "none";
+      }
       updateUI();
-    } else {
-      // Optionally, revert back to "Add to Cart" when count is 0
-      addToCart.style.display = "block";
-      waffleCount.style.display = "none";
     }
   }
 
@@ -44,6 +52,6 @@ function addItems() {
 
   // Initialize UI
   updateUI();
-
+  console.log(currentCount);
   return currentCount;
 }
