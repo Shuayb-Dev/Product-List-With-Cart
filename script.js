@@ -10,6 +10,8 @@ function addItems() {
   addToCart.style.display = "none";
   waffleCount.style.display = "flex";
 
+  //step on the gas
+
   // Update the count and reattach listeners
   function updateUI() {
     waffleCount.innerHTML = `
