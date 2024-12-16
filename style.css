@@ -96,3 +96,13 @@ button img {
   height: 10px;
   width: 10px;
 }
+
+.div2 {
+  background-image: url(images/image-creme-brulee-desktop.jpg);
+  background-size: cover;
+}
+
+.div3 {
+  background-image: url(images/image-macaron-desktop.jpg);
+  background-size: cover;
+}
