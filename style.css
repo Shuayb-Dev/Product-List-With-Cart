@@ -1,35 +1,106 @@
 .parent-container {
   display: grid;
+  gap: 20px;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: repeat(5, 1fr);
-  gap: 10px;
+  left: 80px;
+  position: relative;
   row-gap: 80px;
 }
 
-.div4 {
+h1 {
+  color: hsl(17, 62%, 9%);
+  font-family: "Red Hat Text", serif;
+  left: 80px;
+  position: relative;
+}
+
+h4 {
+  color: hsl(7, 20%, 60%);
+  font-family: "Red Hat Text", serif;
+  font-weight: 400;
+}
+
+.waffle-label,
+.vanilla-label,
+.pie-label,
+.baklava-label,
+.tiramisu-label,
+.cake-label,
+.brownie-label,
+.panna-label p {
+  color: hsl(14, 65%, 9%);
+  font-family: "Red Hat Text", serif;
+  font-weight: 600;
+}
+
+.waffle-label span,
+.vanilla-label span,
+.macaron-label span,
+.pie-label span,
+.baklava-label span,
+.tiramisu-label span,
+.cake-label span,
+.brownie-label span,
+.panna-label span {
+  color: hsl(14, 86%, 42%);
+  font-family: "Red Hat Text", serif;
+  font-weight: 600;
+}
+
+.your-cart {
+  background-color: white;
+  border-radius: 15px;
+  height: 300px;
+  width: 400px !important;
+}
+
+.your-cart h2 {
+  color: hsl(14, 86%, 42%);
+  font-family: "Red Hat Text", serif;
+  font-weight: 800;
+  left: 20px;
+  position: relative;
+}
+
+.your-cart p {
+  color: hsl(12, 20%, 44%);
+  font-family: "Red Hat Text", serif;
+  font-weight: 600;
+  position: relative;
+  text-align: center;
+  top: 55%;
+}
+
+.pie-container {
   grid-column-start: 3;
   grid-row-start: 2;
 }
+.your-cart {
+  background-color: white;
+  height: 300px;
+  width: 300px;
+}
 
-.div5 {
+.baklava-container {
   grid-column-start: 2;
   grid-row-start: 2;
 }
 
-.div6 {
+.tiramisu-container {
   grid-column-start: 1;
   grid-row-start: 2;
 }
 
-.div7 {
+.cake-container {
   grid-row-start: 3;
 }
 
-.div8 {
+.brownie-container {
   grid-row-start: 3;
 }
 
-.div9 {
+.pannaCotta-Container {
   grid-row-start: 3;
 }
 
@@ -42,11 +113,10 @@
 .div7,
 .div8,
 .div9 {
-  border-style: none;
   border-radius: 5px;
+  border-style: none;
   height: 200px;
   width: 200px;
-  background-color: red;
 }
 
 main {
@@ -58,24 +128,18 @@ body {
   background-color: hsl(26, 54%, 97%);
 }
 
-.your-cart {
-  height: 300px;
-  width: 300px;
-  background-color: white;
-}
-
 .div1 {
   background-image: url(images/image-waffle-desktop.jpg);
   background-size: cover;
 }
 
 button {
-  height: 40px;
-  width: 120px;
-  position: relative;
-  left: 25%;
-  top: 90%;
   border-radius: 10px;
+  height: 40px;
+  left: 25%;
+  position: relative;
+  top: 90%;
+  width: 120px;
 }
 
 button img {
@@ -86,13 +150,13 @@ button img {
 #waffle-count {
   background-color: hsl(15, 85%, 42%);
   display: flex;
-  gap: 38px;
   display: none;
+  gap: 38px;
 }
 
 #waffle-count img {
-  border: solid 1px white;
   border-radius: 50%;
+  border: solid 1px white;
   height: 10px;
   width: 10px;
 }
@@ -105,4 +169,46 @@ button img {
 .div3 {
   background-image: url(images/image-macaron-desktop.jpg);
   background-size: cover;
+}
+
+.div4 {
+  background-image: url(images/image-meringue-desktop.jpg);
+  background-size: cover;
+}
+
+.div5 {
+  background-image: url(images/image-baklava-desktop.jpg);
+  background-size: cover;
+}
+
+.div6 {
+  background-image: url(images/image-tiramisu-desktop.jpg);
+  background-size: cover;
+}
+
+.div7 {
+  background-image: url(images/image-cake-desktop.jpg);
+  background-size: cover;
+}
+
+.div8 {
+  background-image: url(images/image-brownie-desktop.jpg);
+  background-size: cover;
+}
+
+.div9 {
+  background-image: url(images/image-panna-cotta-desktop.jpg);
+  background-size: cover;
+}
+
+.your-cart {
+  background-image: url(images/illustration-empty-cart.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 150px;
+}
+.your-cart p {
+  position: relative;
+  text-align: center;
+  top: 55%;
 }
