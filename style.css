@@ -28,6 +28,7 @@ h4 {
 .tiramisu-label,
 .cake-label,
 .brownie-label,
+.macaron-label,
 .panna-label p {
   color: hsl(14, 65%, 9%);
   font-family: "Red Hat Text", serif;
@@ -140,6 +141,8 @@ button {
   position: relative;
   top: 90%;
   width: 120px;
+  border-style: solid 1px hsl(14, 25%, 72%);
+  border-color: hsl(14, 25%, 72%);
 }
 
 button img {
@@ -148,14 +151,18 @@ button img {
 }
 
 #waffle-count,
-#vanilla-count {
+#vanilla-count,
+#macaron-count,
+#pie-count {
   background-color: hsl(15, 85%, 42%);
   display: flex;
   gap: 38px;
 }
 
 #waffle-count img,
-#vanilla-count img {
+#vanilla-count img,
+#macaron-count img,
+#pie-count img {
   border-radius: 50%;
   border: solid 1px white;
   height: 10px;

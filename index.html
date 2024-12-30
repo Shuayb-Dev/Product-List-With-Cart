@@ -57,7 +57,17 @@
         </div>
 
         <div class="macaron-container">
-          <div class="div3" id="macaron"></div>
+          <div class="div3" id="macaron">
+            <button
+              id="add-to-cart-macaron"
+              onclick="addItem('macaron', 'Macaron Mix of Five')"
+            >
+              <img src="images/icon-add-to-cart.svg" /> Add To Cart
+            </button>
+            <button id="macaron-count" style="display: none">
+              <!-- Content dynamically managed by JS -->
+            </button>
+          </div>
           <div class="macaron-label" id="macaron-label">
             <h4>Macaron</h4>
             <p>Macaron Mix of Five</p>
@@ -66,7 +76,17 @@
         </div>
 
         <div class="pie-container">
-          <div class="div4"></div>
+          <div class="div4">
+            <button
+              id="add-to-cart-pie"
+              onclick="addItem('pie', 'Lemon Meringue Pie')"
+            >
+              <img src="images/icon-add-to-cart.svg" /> Add To Cart
+            </button>
+            <button id="pie-count" style="display: none">
+              <!-- Content dynamically managed by JS -->
+            </button>
+          </div>
           <div class="pie-label" id="pie-label">
             <h4>Pie</h4>
             <p>Lemon Meringue Pie</p>

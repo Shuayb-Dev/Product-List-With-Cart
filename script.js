@@ -31,15 +31,12 @@ function addItem(itemId, itemLabel) {
       0
     )})</h2>`;
     addedItems.innerHTML = Object.entries(itemCounts)
-      .map(
-        ([id, count]) =>
-          `<p>${
-            document
-              .getElementById(`${id}-label`)
-              .querySelector(".waffle-description, .vanilla-description")
-              .textContent
-          } x ${count}</p>`
-      )
+      .map(([id, count]) => {
+        // Get item description (only the <p> text, not the <h4> title)
+        const itemElement = document.getElementById(`${id}-label`);
+        const itemDescription = itemElement.querySelector("p").textContent; // Get the <p> text
+        return `<p>${count} x ${itemDescription}</p>`; // Show the description with quantity
+      })
       .join("");
 
     // Reattach event listeners to the new buttons
