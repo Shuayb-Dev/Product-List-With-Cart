@@ -19,50 +19,39 @@
       <div class="parent-container">
         <div class="waffle-container">
           <div class="div1" id="waffle">
-            <button id="add-to-cart" onclick="addItems()">
+            <button
+              id="add-to-cart-waffle"
+              onclick="addItem('waffle', 'Waffle with Berries')"
+            >
               <img src="images/icon-add-to-cart.svg" /> Add To Cart
             </button>
-            <button id="waffle-count">
-              <img
-                id="minus"
-                src="images/icon-decrement-quantity.svg"
-                alt="minus"
-              />
-              <img
-                id="plus"
-                src="images/icon-increment-quantity.svg"
-                alt="plus"
-              />
+            <button id="waffle-count" style="display: none">
+              <!-- Content dynamically managed by JS -->
             </button>
           </div>
           <div class="waffle-label" id="waffle-label">
-            <h4>Waffle</h4>
-            <p>Waffle with Berries</p>
+            <!-- Combine title and description explicitly -->
+            <h4 class="waffle-title">Waffle</h4>
+            <p class="waffle-description">Waffle with Berries</p>
             <p><span>$6.50</span></p>
           </div>
         </div>
 
         <div class="vanilla-container">
           <div class="div2" id="vanilla">
-            <button id="add-to-cart" onclick="addVanilla()">
+            <button
+              id="add-to-cart-vanilla"
+              onclick="addItem('vanilla', 'Vanilla Bean Creme Brulee')"
+            >
               <img src="images/icon-add-to-cart.svg" /> Add To Cart
             </button>
-            <button id="vanilla-count">
-              <img
-                id="minus"
-                src="images/icon-decrement-quantity.svg"
-                alt="minus"
-              />
-              <img
-                id="plus"
-                src="images/icon-increment-quantity.svg"
-                alt="plus"
-              />
+            <button id="vanilla-count" style="display: none">
+              <!-- Content dynamically managed by JS -->
             </button>
           </div>
           <div class="vanilla-label" id="vanilla-label">
-            <h4>Creme Brulee</h4>
-            <p>Vanilla Bean Creme Brulee</p>
+            <h4 class="vanilla-title">Creme Brulee</h4>
+            <p class="vanilla-description">Vanilla Bean Creme Brulee</p>
             <p><span>$7.00</span></p>
           </div>
         </div>

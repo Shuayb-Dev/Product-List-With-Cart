@@ -147,14 +147,15 @@ button img {
   top: 5px;
 }
 
-#waffle-count {
+#waffle-count,
+#vanilla-count {
   background-color: hsl(15, 85%, 42%);
   display: flex;
-  display: none;
   gap: 38px;
 }
 
-#waffle-count img {
+#waffle-count img,
+#vanilla-count img {
   border-radius: 50%;
   border: solid 1px white;
   height: 10px;
