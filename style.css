@@ -153,7 +153,12 @@ button img {
 #waffle-count,
 #vanilla-count,
 #macaron-count,
-#pie-count {
+#pie-count,
+#baklava-count,
+#tiramisu-count,
+#cake-count,
+#brownie-count,
+#panna-count {
   background-color: hsl(15, 85%, 42%);
   display: flex;
   gap: 38px;
@@ -162,7 +167,12 @@ button img {
 #waffle-count img,
 #vanilla-count img,
 #macaron-count img,
-#pie-count img {
+#pie-count img,
+#baklava-count img,
+#tiramisu-count img,
+#cake-count img,
+#brownie-count img,
+#panna-count img {
   border-radius: 50%;
   border: solid 1px white;
   height: 10px;
