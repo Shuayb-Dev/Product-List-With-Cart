@@ -1,7 +1,6 @@
-// Store item counts in a map
-const itemCounts = {};
+// Global object to track item counts
+let itemCounts = {};
 
-// Generic function to handle adding items
 function addItem(itemId, itemLabel) {
   if (!itemCounts[itemId]) {
     itemCounts[itemId] = 1; // Initialize count if not present
@@ -16,7 +15,7 @@ function addItem(itemId, itemLabel) {
   addToCart.style.display = "none";
   itemCount.style.display = "flex";
 
-  // Update the UI
+  // Function to update the UI
   function updateUI() {
     // Update quantity controls
     itemCount.innerHTML = `
@@ -30,16 +29,42 @@ function addItem(itemId, itemLabel) {
       (a, b) => a + b,
       0
     )})</h2>`;
+
+    // Update added items with detailed formatting
     addedItems.innerHTML = Object.entries(itemCounts)
       .map(([id, count]) => {
-        // Get item description (only the <p> text, not the <h4> title)
         const itemElement = document.getElementById(`${id}-label`);
-        const itemDescription = itemElement.querySelector("p").textContent; // Get the <p> text
-        return `<p>${count} x ${itemDescription}</p>`; // Show the description with quantity
+        const itemDescription = itemElement.querySelector("p").textContent;
+        const itemPrice = parseFloat(
+          itemElement.querySelector("span").textContent.replace("$", "")
+        );
+        const totalPrice = (itemPrice * count).toFixed(2);
+
+        return `
+          <p>
+            ${itemDescription}<br>
+            ${count}x @$${itemPrice.toFixed(2)} &nbsp;$${totalPrice}
+          </p>
+          <hr />
+        `;
       })
       .join("");
 
-    // Reattach event listeners to the new buttons
+    const cart = document.querySelector(".your-cart");
+
+    if (Object.keys(itemCounts).length > 0) {
+      // Make cart visible and dynamically adjust height
+      cart.style.visibility = "visible";
+      const cartItemsHeight = addedItems.scrollHeight;
+      cart.style.height = `${Math.max(cartItemsHeight + 60, 250)}px`; // Ensure minimum 250px
+      cart.style.transition = "height 0.3s ease"; // Smooth height transition
+    } else {
+      // Reset to default height and hide
+      cart.style.height = "250px";
+      cart.style.visibility = "hidden";
+    }
+
+    // Reattach event listeners to increment and decrement buttons
     document
       .getElementById(`minus-${itemId}`)
       .addEventListener("click", () => updateCountDown(itemId));
@@ -53,10 +78,10 @@ function addItem(itemId, itemLabel) {
     if (itemCounts[itemId] > 0) {
       itemCounts[itemId]--;
       if (itemCounts[itemId] === 0) {
-        // Revert back to "Add to Cart" when count reaches 0
+        // Revert back to "Add to Cart" button
         addToCart.style.display = "block";
         itemCount.style.display = "none";
-        delete itemCounts[itemId]; // Remove item from cart when count is 0
+        delete itemCounts[itemId]; // Remove item from the cart
       }
       updateUI();
     }
@@ -71,5 +96,3 @@ function addItem(itemId, itemLabel) {
   // Initialize UI
   updateUI();
 }
-
-//First commit of the year
