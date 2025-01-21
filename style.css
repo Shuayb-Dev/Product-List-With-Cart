@@ -224,9 +224,31 @@ button img {
   background-position: center;
   background-repeat: no-repeat;
   background-size: 150px;
+  background-color: white;
+  border-radius: 15px;
+  width: 400px;
+  padding: 20px;
+  transition: height 0.3s ease, visibility 0.3s ease;
+  height: 250px; /* Default height */
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  overflow: visible; /* Prevent content overflow */
 }
+
+#added-items {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
 .your-cart p {
   position: relative;
   text-align: center;
-  top: 55%;
+  margin: 10px 0; /* Adjust spacing */
 }
